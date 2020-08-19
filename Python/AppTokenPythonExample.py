@@ -87,7 +87,7 @@ def getAccessToken():
 
 def sign_request(request: requests.Request) -> requests.PreparedRequest:
     prepared_request = request.prepare()
-    now = int(time.time())
+    now = int(time.time())+30
     method = request.method.upper()
     path_url = prepared_request.path_url  # includes encoded query params
     # could be None so we use an empty **byte** string here
